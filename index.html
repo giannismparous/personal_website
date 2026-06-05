@@ -2,11 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
-    <link rel="apple-touch-icon" href="/pics/profile.JPG" />
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0a0f17" />
     <title>Giannis</title>
+    <script>
+      (function () {
+        try {
+          var locale = localStorage.getItem('site-locale')
+          if (locale === 'el' || locale === 'es' || locale === 'pt') {
+            document.documentElement.lang = locale
+          }
+          if (localStorage.getItem('site-theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light')
+            document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#f7f9fc')
+          }
+        } catch (e) {}
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>
